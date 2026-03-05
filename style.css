@@ -35,39 +35,73 @@ header {
   border-bottom: var(--secondary-color) 6px solid;
 }
 
-/* header link hover */
+/* header link animations! */
 header a {
-  transition: color 0.3s;
+  font-size: 1.5rem;
+  color: var(--off-white);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+/* end header link animations */
+
+/* underline animation */
+header a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--secondary-color);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
 }
 
 header a:hover {
   color: var(--warn-color);
 }
 
-/* article link hover */
+header a:hover::after {
+  width: 100%;
+}
+/* end header link animations */
+
+
+* article link transitions */
 main a {
-  transition: color 0.3s;
+  color: var(--danger-color);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 main a:hover {
   color: var(--secondary-color);
+  transform: scale(1.05);
+}
+/* end article link transitions */
+
+/* hero button animation + transition */
+section.hero > button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* hero button transition + animation */
-section.hero button {
-  transition: transform 0.2s;
-}
-
-section.hero button:hover {
+section.hero > button:hover {
+  background-color: var(--warn-color);
   transform: scale(1.1);
-  animation: bounce 0.4s;
+  animation: pulse 0.6s;
 }
 
-/* animation */
-@keyframes bounce {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.15);}
-  100% {transform: scale(1.1);}
+/* CSS animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1.1); }
 }
 
 main > article, nav{
@@ -149,4 +183,3 @@ footer {
   padding: 24px 0;
   color: var(--off-white);
 }
-
