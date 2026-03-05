@@ -35,19 +35,40 @@ header {
   border-bottom: var(--secondary-color) 6px solid;
 }
 
-/* header link animations! */
+/* header link hover */
 header a {
-  font-size: 1.5rem;
-  color: var(--off-white);
+  transition: color 0.3s;
 }
 
-/* end header link animations */
+header a:hover {
+  color: var(--warn-color);
+}
 
-/* article link transitions */
+/* article link hover */
 main a {
-  color: var(--danger-color);
+  transition: color 0.3s;
 }
-/* end article link transitions */
+
+main a:hover {
+  color: var(--secondary-color);
+}
+
+/* hero button transition + animation */
+section.hero button {
+  transition: transform 0.2s;
+}
+
+section.hero button:hover {
+  transform: scale(1.1);
+  animation: bounce 0.4s;
+}
+
+/* animation */
+@keyframes bounce {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.15);}
+  100% {transform: scale(1.1);}
+}
 
 main > article, nav{
   max-width: 1200px;
@@ -129,37 +150,3 @@ footer {
   color: var(--off-white);
 }
 
-/* header link hover */
-header a {
-  transition: color 0.3s;
-}
-
-header a:hover {
-  color: var(--warn-color);
-}
-
-/* article link hover */
-main a {
-  transition: color 0.3s;
-}
-
-main a:hover {
-  color: var(--secondary-color);
-}
-
-/* hero button transition + animation */
-section.hero button {
-  transition: transform 0.2s;
-}
-
-section.hero button:hover {
-  transform: scale(1.1);
-  animation: bounce 0.4s;
-}
-
-/* animation */
-@keyframes bounce {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.15);}
-  100% {transform: scale(1.1);}
-}
